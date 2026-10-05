@@ -1,0 +1,15 @@
+<form method="post">
+    {% csrf_token %}
+    <input type="hidden" name="next" value="{{ request.GET.next }}">
+    <p>
+        <label>Имя пользователя:<br>
+        <input type="text" name="username">
+        </label>
+    </p>
+    <p>
+        <label>Пароль:<br>
+        <input type="password" name="password">
+        </label>
+    </p>
+    <p><button class="btn‑green" type="submit">Войти</button></p>
+</form>

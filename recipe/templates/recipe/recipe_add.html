@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Добавить рецепт</title>
+</head>
+<body>
+    <p><a href="/">← На главную</a></p>
+    <h1>Добавить новый рецепт</h1>
+    <p>Форма для добавления (заготовка)</p>
+    <form method="post">
+        {% csrf_token %}
+        <p>
+            <label>Название:<br>
+            <input type="text" name="title" size="50">
+            </label>
+        </p>
+        <p>
+            <label>Категория:<br>
+            <input type="text" name="category" size="50">
+            </label>
+        </p>
+        <p>
+            <label>Ингредиенты:<br>
+            <textarea name="ingredients" rows="4" cols="50"></textarea>
+            </label>
+        </p>
+        <p>
+            <label>Шаги приготовления:<br>
+            <textarea name="steps" rows="6" cols="50"></textarea>
+            </label>
+        </p>
+        <p><button type="submit">Сохранить рецепт</button></p>
+    </form>
+</body>
+</html>

@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Удаление рецепта</title>
+</head>
+<body>
+    <p><a href="/recipe/{{recipe.id}}/">← Отмена</a></p>
+    <h1>Вы действительно хотите удалить рецепт «{{ recipe.title }}»?</h1>
+    <form method="post">
+        {% csrf_token %}
+        <p><button type="submit">Подтвердить удаление</button></p>
+    </form>
+</body>
+</html>

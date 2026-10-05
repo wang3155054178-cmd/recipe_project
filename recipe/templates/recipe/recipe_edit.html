@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Редактирование рецепта</title>
+</head>
+<body>
+    <p><a href="/recipe/{{recipe.id}}/">← Назад к рецепту</a></p>
+    <h1>Редактировать: {{ recipe.title }}</h1>
+    <form method="post">
+        {% csrf_token %}
+        <p>
+            <label>Название:<br>
+            <input type="text" name="title" value="{{recipe.title}}" size="50">
+            </label>
+        </p>
+        <p>
+            <label>Категория:<br>
+            <input type="text" name="category" value="{{recipe.category}}" size="50">
+            </label>
+        </p>
+        <p>
+            <label>Ингредиенты:<br>
+            <textarea name="ingredients" rows="4" cols="50">{{recipe.ingredients}}</textarea>
+            </label>
+        </p>
+        <p>
+            <label>Шаги приготовления:<br>
+            <textarea name="steps" rows="6" cols="50">{{recipe.steps}}</textarea>
+            </label>
+        </p>
+        <p><button type="submit">Обновить</button></p>
+    </form>
+</body>
+</html>
